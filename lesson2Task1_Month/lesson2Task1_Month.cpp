@@ -1,101 +1,75 @@
-// lesson2Task1_Month.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
-
-enum class months {
-    January=1,
-    February,
-    March,
+enum class Months {
+    Jan = 1,
+    Feb,
+    Marth,
     April,
     May,
     June,
-    July,
-    August,
-    September,
-    October,
-    November,
-    December
+    Jule,
+    Aug,
+    Sep,
+    Oct,
+    Nov,
+    Dec
 };
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** atgv) {
     setlocale(LC_ALL, "Russian");
+    int m1;
 
-    int m;
-    months M;
-    
-    do
-    {
-        
-        std::cout << "Введите номер месяца: ";
-        std::cin >> m;
+    do {
 
-        if (m < 0 || m > 12) {
-            std::cout << "Неправильный номер!";
-        }
+        std::cout << "введите номер месяца: ";
+        std::cin >> m1;
+        Months m = static_cast<Months>(m1);
 
-        if (m == 0) {
-            std::cout << "Досвидания";
-        }
-        
         switch (m) {
-        case 1:
-            
-            std::cout << static_cast<int>(M) << std::endl;
+        case Months::Jan:
+            std::cout << "Январь" << std::endl;
             break;
-        case 1:
-            months M = static_cast<months>(1);
-            std::cout << static_cast<int>(M) << std::endl;
+        case Months::Feb:
+            std::cout << "Февраль" << std::endl;
+            break;
+        case Months::Marth:
+            std::cout << "Март" << std::endl;
+            break;
+        case Months::April:
+            std::cout << "Апрель" << std::endl;
+            break;
+        case Months::May:
+            std::cout << "Май" << std::endl;
+            break;
+        case Months::June:
+            std::cout << "Июнь" << std::endl;
+            break;
+        case Months::Jule:
+            std::cout << "Июль" << std::endl;
+            break;
+        case Months::Aug:
+            std::cout << "Август" << std::endl;
+            break;
+        case Months::Sep:
+            std::cout << "Сентябрь" << std::endl;
+            break;
+        case Months::Oct:
+            std::cout << "Октябрь" << std::endl;
+            break;
+        case Months::Nov:
+            std::cout << "Ноябрь" << std::endl;
+            break;
+        case Months::Dec:
+            std::cout << "Декабрь" << std::endl;
             break;
         }
-                
+    } while (m1 > 0 && m1 < 13);
 
-        
-    } while (m > 0 && m <=12);
-    
-
+    if (m1 > 12 || m1 < 0) {
+        std::cout << "Не правильный номер";
+    }
+    if (m1 == 0) {
+        std::cout << "До свидания!";
+        return 0;
+    }
 }
-
-
-
-
-/*Описание
-Напишите программу, которая спрашивает у пользователя 
-номер месяца и выводит на экран название месяца, 
-введённого пользователем.
-
-Если пользователь ввёл некорректный номер месяца, 
-сообщите ему об этом.
-
-Спрашивайте пользователя до тех пор, пока он не введёт 0.
-
-Для решения задачи воспользуйтесь перечислением.
-
-Пример работы программы
-Введите номер месяца : 1
-Январь
-Введите номер месяца : 7
-Июль
-Введите номер месяца : 13
-Неправильный номер!
-Введите номер месяца : 0
-До свидания
-
-
-
-Что использовать для решения.
-Используйте перечисление для обработки пользовательского ввода.
-Не забудьте привести пользовательский ввод к типу перечисления
-с помощью static_cast.
-
-Обрабатывайте пользовательский ввод с помощью switch case.
-
-Для ввода значений с консоли используйте std::cin.
-Для вывода на консоль используйте std::cout
-
-*/
-/*
-
-*/
